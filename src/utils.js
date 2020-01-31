@@ -39,10 +39,10 @@ function resolveBin(modName, { executable = modName, cwd = process.cwd() } = {})
 }
 
 function resolveCodScripts() {
-  if (pkg.name === 'cod-scripts') {
+  if (pkg.name === 'fu-scripts') {
     return require.resolve('./').replace(process.cwd(), '.');
   }
-  return resolveBin('cod-scripts');
+  return resolveBin('fu-scripts');
 }
 
 const fromRoot = (...p) => path.join(appDirectory, ...p);

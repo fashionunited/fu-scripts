@@ -16,7 +16,7 @@ to an Open Source Project on GitHub][egghead]
 > branches on your fork. To do this, run:
 >
 > ```
-> git remote add upstream https://github.com/codfish/cod-scripts.git
+> git remote add upstream https://github.com/fashionunited/fu-scripts.git
 > git fetch upstream
 > git branch --set-upstream-to=upstream/master master
 > ```
@@ -69,4 +69,4 @@ Also, please watch the repo and respond to questions/bug reports/feature request
 [semantic-release]: https://npmjs.com/package/semantic-release
 [convention]:
   https://github.com/conventional-changelog/conventional-changelog-angular/blob/ed32559941719a130bb0327f886d6a32a8cbc2ba/convention.md
-[issues]: https://github.com/codfish/cod-scripts/issues
+[issues]: https://github.com/fashionunited/fu-scripts/issues

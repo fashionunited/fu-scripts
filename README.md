@@ -1,5 +1,5 @@
 <div align="center">
-<h1>cod-scripts 🛠📦</h1>
+<h1>fu-scripts 🛠📦</h1>
 
 <p>CLI toolbox for common scripts for my projects</p>
 </div>
@@ -44,25 +44,25 @@ This module is distributed via [npm][npm] which is bundled with [node][node] and
 as one of your project's `devDependencies`:
 
 ```
-npm install --save-dev cod-scripts
+npm install --save-dev fu-scripts
 ```
 
 ## Usage
 
-This is a CLI and exposes a bin called `cod-scripts`. I don't really plan on documenting or testing
+This is a CLI and exposes a bin called `fu-scripts`. I don't really plan on documenting or testing
 it super duper well because it's really specific to my needs. You'll find all available scripts in
 `src/scripts`.
 
 This project actually dogfoods itself. If you look in the `package.json`, you'll find scripts with
 `node src {scriptName}`. This serves as an example of some of the things you can do with
-`cod-scripts`.
+`fu-scripts`.
 
 ### Overriding Config
 
-Unlike `react-scripts`, `cod-scripts` allows you to specify your own configuration for things and
-have that plug directly into the way things work with `cod-scripts`. There are various ways that it
+Unlike `react-scripts`, `fu-scripts` allows you to specify your own configuration for things and
+have that plug directly into the way things work with `fu-scripts`. There are various ways that it
 works, but basically if you want to have your own config for something, just add the configuration
-and `cod-scripts` will use that instead of it's own internal config. In addition, `cod-scripts`
+and `fu-scripts` will use that instead of it's own internal config. In addition, `fu-scripts`
 exposes its configuration so you can use it and override only the parts of the config you need to.
 
 This can be a very helpful way to make editor integration work for tools like ESLint which require
@@ -71,7 +71,7 @@ project-based ESLint configuration to be present to work.
 So, if we were to do this for ESLint, you could create an `.eslintrc` with the contents of:
 
 ```
-{"extends": "./node_modules/cod-scripts/eslint.js"}
+{"extends": "./node_modules/fu-scripts/eslint.js"}
 ```
 
 > Note: for now, you'll have to include an `.eslintignore` in your project until
@@ -80,13 +80,13 @@ So, if we were to do this for ESLint, you could create an `.eslintrc` with the c
 Or, for `babel`, a `.babelrc` with:
 
 ```
-{ "presets": ["cod-scripts/babel"] }
+{ "presets": ["fu-scripts/babel"] }
 ```
 
 Or, for `jest`:
 
 ```js
-const { jest: jestConfig } = require('cod-scripts/config');
+const { jest: jestConfig } = require('fu-scripts/config');
 
 module.exports = Object.assign(jestConfig, {
   // your overrides here
@@ -102,7 +102,7 @@ Or, for `commitlint`, a `commitlint.config.js` file or `commitlint` prop in pack
 
 ```js
 // commitlint.config.js or .commitlintrc.js
-const { commitlint: commitlintConfig } = require('cod-scripts/commitlint');
+const { commitlint: commitlintConfig } = require('fu-scripts/commitlint');
 
 module.exports = {
   ...commitlintConfig,
@@ -116,7 +116,7 @@ module.exports = {
 // package.json
 {
   "commitlint": {
-    "extends": ["./node_modules/cod-scripts/commitlint"],
+    "extends": ["./node_modules/fu-scripts/commitlint"],
     "rules": {
       // your overrides here
       // https://commitlint.js.org/#/reference-rules
@@ -125,14 +125,14 @@ module.exports = {
 }
 ```
 
-> Note: `cod-scripts` intentionally does not merge things for you when you start configuring things
+> Note: `fu-scripts` intentionally does not merge things for you when you start configuring things
 > to make it less magical and more straightforward. Extending can take place on your terms. I think
 > this is actually a great way to do this.
 
 ### Flow support
 
 If the `flow-bin` is a dependency on the project the `@babel/preset-flow` will automatically get
-loaded when you use the default babel config that comes with `cod-scripts`. If you customised your
+loaded when you use the default babel config that comes with `fu-scripts`. If you customised your
 `.babelrc`-file you might need to manually add `@babel/preset-flow` to the `presets`-section.
 
 ## Inspiration
@@ -145,26 +145,28 @@ MIT
 
 [npm]: https://www.npmjs.com/
 [node]: https://nodejs.org
-[build-badge]: https://img.shields.io/travis/codfish/cod-scripts.svg?style=flat-square
-[build]: https://travis-ci.org/codfish/cod-scripts
-[coverage-badge]: https://img.shields.io/codecov/c/github/codfish/cod-scripts.svg?style=flat-square
-[coverage]: https://codecov.io/github/codfish/cod-scripts
-[version-badge]: https://img.shields.io/npm/v/cod-scripts.svg?style=flat-square
-[package]: https://www.npmjs.com/package/cod-scripts
-[downloads-badge]: https://img.shields.io/npm/dm/cod-scripts.svg?style=flat-square
-[npmcharts]: http://npmcharts.com/compare/cod-scripts
-[license-badge]: https://img.shields.io/npm/l/cod-scripts.svg?style=flat-square
-[license]: https://github.com/codfish/cod-scripts/blob/master/LICENSE
+[build-badge]: https://img.shields.io/travis/fashionunited/fu-scripts.svg?style=flat-square
+[build]: https://travis-ci.org/fashionunited/fu-scripts
+[coverage-badge]:
+  https://img.shields.io/codecov/c/github/fashionunited/fu-scripts.svg?style=flat-square
+[coverage]: https://codecov.io/github/fashionunited/fu-scripts
+[version-badge]: https://img.shields.io/npm/v/fu-scripts.svg?style=flat-square
+[package]: https://www.npmjs.com/package/fu-scripts
+[downloads-badge]: https://img.shields.io/npm/dm/fu-scripts.svg?style=flat-square
+[npmcharts]: http://npmcharts.com/compare/fu-scripts
+[license-badge]: https://img.shields.io/npm/l/fu-scripts.svg?style=flat-square
+[license]: https://github.com/fashionunited/fu-scripts/blob/master/LICENSE
 [prs-badge]: https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square
 [prs]: http://makeapullrequest.com
 [donate-badge]: https://img.shields.io/badge/$-support-green.svg?style=flat-square
 [coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=flat-square
-[coc]: https://github.com/codfish/cod-scripts/blob/master/other/CODE_OF_CONDUCT.md
-[github-watch-badge]: https://img.shields.io/github/watchers/codfish/cod-scripts.svg?style=social
-[github-watch]: https://github.com/codfish/cod-scripts/watchers
-[github-star-badge]: https://img.shields.io/github/stars/codfish/cod-scripts.svg?style=social
-[github-star]: https://github.com/codfish/cod-scripts/stargazers
+[coc]: https://github.com/fashionunited/fu-scripts/blob/master/other/CODE_OF_CONDUCT.md
+[github-watch-badge]:
+  https://img.shields.io/github/watchers/fashionunited/fu-scripts.svg?style=social
+[github-watch]: https://github.com/fashionunited/fu-scripts/watchers
+[github-star-badge]: https://img.shields.io/github/stars/fashionunited/fu-scripts.svg?style=social
+[github-star]: https://github.com/fashionunited/fu-scripts/stargazers
 [twitter]:
-  https://twitter.com/intent/tweet?text=Check%20out%20cod-scripts!%20https://github.com/codfish/cod-scripts%20%F0%9F%91%8D
+  https://twitter.com/intent/tweet?text=Check%20out%20fu-scripts!%20https://github.com/fashionunited/fu-scripts%20%F0%9F%91%8D
 [twitter-badge]:
-  https://img.shields.io/twitter/url/https/github.com/codfish/cod-scripts.svg?style=social
+  https://img.shields.io/twitter/url/https/github.com/fashionunited/fu-scripts.svg?style=social

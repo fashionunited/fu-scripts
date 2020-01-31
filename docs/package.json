@@ -1,11 +1,11 @@
 {
   "scripts": {
-    "build": "cod-scripts build -d core",
+    "build": "fu-scripts build -d core",
     "build:watch": "npm run build -- --watch",
-    "format": "cod-scripts format",
-    "lint": "cod-scripts lint",
+    "format": "fu-scripts format",
+    "lint": "fu-scripts lint",
     "lint:md": "markdownlint -i node_modules -i dist .",
-    "test": "cod-scripts test",
-    "validate": "cod-scripts validate"
+    "test": "fu-scripts test",
+    "validate": "fu-scripts validate"
   }
 }

@@ -1,13 +1,13 @@
 {
-  "name": "cod-scripts",
-  "version": "0.0.0-semantically-released",
+  "name": "fu-scripts",
+  "version": "0.0.1-semantically-released",
   "description": "CLI for common scripts for my projects",
   "engines": {
     "node": ">= 8",
     "npm": ">= 5"
   },
   "bin": {
-    "cod-scripts": "dist/index.js"
+    "fu-scripts": "dist/index.js"
   },
   "scripts": {
     "test": "node src test",
@@ -28,7 +28,7 @@
     "jest.js"
   ],
   "keywords": [],
-  "author": "Chris O'Donnell <dev@codfish.io> (http://codfish.io/)",
+  "author": "Joost van der Laan <joost@fashionunited.com> (https://fashionunited.com/)",
   "license": "MIT",
   "dependencies": {
     "@babel/cli": "^7.6.4",
@@ -126,12 +126,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/codfish/cod-scripts.git"
+    "url": "https://github.com/fashionunited/fu-scripts.git"
   },
   "bugs": {
-    "url": "https://github.com/codfish/cod-scripts/issues"
+    "url": "https://github.com/fashionunited/fu-scripts/issues"
   },
-  "homepage": "https://github.com/codfish/cod-scripts#readme",
+  "homepage": "https://github.com/fashionunited/fu-scripts#readme",
   "devDependencies": {
     "jest-in-case": "^1.0.2",
     "slash": "^3.0.0"

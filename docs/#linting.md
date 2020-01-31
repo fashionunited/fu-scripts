@@ -14,9 +14,9 @@ My personal & professional linting setup. Extends airbnb's ESLint config first, 
 
 Convenient opt-in configs for projects using Docker or Ethereum to avoid common false positives.
 
-To understand more, see https://github.com/codfish/eslint-config-codfish.
+To understand more, see https://github.com/fashionunited/eslint-config-codfish.
 
-To avoid having to manually setup everything and add all configuration/boilerplate code to your project, use [cod-scripts](https://github.com/codfish/cod-scripts) instead. It was forked from [kcd-scripts](https://github.com/kentcdodds/kcd-scripts) and ultimately inspired by `react-scripts`.
+To avoid having to manually setup everything and add all configuration/boilerplate code to your project, use [fu-scripts](https://github.com/fashionunited/fu-scripts) instead. It was forked from [kcd-scripts](https://github.com/kentcdodds/kcd-scripts) and ultimately inspired by `react-scripts`.
 
 ## Why
 
@@ -24,7 +24,7 @@ Ultimate goal is maximize code linting coverage, leveraging the power of Prettie
 
 I typically work in very large teams where consensus can be difficult, and linting is like politics, people are generally passionate and rarely unopinionated. I've found that, while we all may not agree on everything in Airbnb's approach, sticking to a styleguide like theirs and avoiding opinionated overrides has had the most success across the teams I've worked on. It also helps relieve the burden of maintaining a custom set of rules (as well as the documentation).
 
-There has to be a very good reason for an override: https://github.com/codfish/eslint-config-codfish/blob/2444e8b63426d8cea1e6da47bce1561278ddd2c2/index.js#L19
+There has to be a very good reason for an override: https://github.com/fashionunited/eslint-config-codfish/blob/2444e8b63426d8cea1e6da47bce1561278ddd2c2/index.js#L19
 
 ## Installation
 
@@ -32,14 +32,14 @@ You may be able to uninstall a number of top-level dependencies from your projec
 
 ```sh
 npm uninstall @babel/core @babel/cli @babel/preset-env @babel/preset-react eslint eslint-config-codfish prettier husky lint-staged jest @commitlint/cli @commitlint/config-conventional markdownlint-cli
-npm install --save-dev cod-scripts
+npm install --save-dev fu-scripts
 npm install --save @babel/runtime
 npm install -g markdownlint-cli
 ```
 
 ## Usage
 
-Full usage: https://github.com/codfish/cod-scripts#usage
+Full usage: https://github.com/fashionunited/fu-scripts#usage
 
 - Delete configuration.
 ```sh
@@ -50,13 +50,13 @@ rm -f .babelrc* .eslintrc* .eslintignore .huskyrc* .lintstagedrc* .prettierrc* .
 ```json
 "eslintConfig": {
   "extends": [
-    "./node_modules/cod-scripts/eslint.js"
+    "./node_modules/fu-scripts/eslint.js"
   ]
 },
 "husky": {
   "hooks": {
-    "pre-commit": "cod-scripts pre-commit",
-    "commit-msg": "cod-scripts commitlint -E HUSKY_GIT_PARAMS"
+    "pre-commit": "fu-scripts pre-commit",
+    "commit-msg": "fu-scripts commitlint -E HUSKY_GIT_PARAMS"
   }
 }
 ```
@@ -64,13 +64,13 @@ rm -f .babelrc* .eslintrc* .eslintignore .huskyrc* .lintstagedrc* .prettierrc* .
 - Add desired scripts to `package.json`
 ```json
 "scripts": {
-  "build": "cod-scripts build",
+  "build": "fu-scripts build",
   "build:watch": "npm run build -- --watch",
-  "format": "cod-scripts format",
-  "lint": "cod-scripts lint",
+  "format": "fu-scripts format",
+  "lint": "fu-scripts lint",
   "lint:md": "markdownlint -i node_modules -i dist .",
   "lint:md:fix": "markdownlint --fix -i node_modules -i dist .",
-  "test": "cod-scripts test",
-  "validate": "cod-scripts validate"
+  "test": "fu-scripts test",
+  "validate": "fu-scripts validate"
 }
 ```

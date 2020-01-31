@@ -11,7 +11,7 @@ never done that before, that's great! Check this free short video tutorial to
 learn how: http://kcd.im/pull-request
 -->
 
-- `cod-scripts` version:
+- `fu-scripts` version:
 - `node` version:
 - `npm` (or `yarn`) version:
 

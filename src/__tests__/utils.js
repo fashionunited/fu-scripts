@@ -28,17 +28,17 @@ test('appDirectory is the dirname to the package.json', () => {
   expect(require('../utils').appDirectory).toBe(pkgPath);
 });
 
-test('resolveCodScripts resolves to src/index.js when in the cod-scripts package', () => {
-  mockPkg({ package: { name: 'cod-scripts' } });
+test('resolveCodScripts resolves to src/index.js when in the fu-scripts package', () => {
+  mockPkg({ package: { name: 'fu-scripts' } });
   expect(require('../utils').resolveCodScripts()).toBe(
     require.resolve('../').replace(process.cwd(), '.'),
   );
 });
 
-test('resolveCodScripts resolves to cod-scripts if not in the cod-scripts package', () => {
-  mockPkg({ package: { name: 'not-cod-scripts' } });
+test('resolveCodScripts resolves to fu-scripts if not in the fu-scripts package', () => {
+  mockPkg({ package: { name: 'not-fu-scripts' } });
   whichSyncMock.mockImplementationOnce(() => require.resolve('../'));
-  expect(require('../utils').resolveCodScripts()).toBe('cod-scripts');
+  expect(require('../utils').resolveCodScripts()).toBe('fu-scripts');
 });
 
 test(`resolveBin resolves to the full path when it's not in $PATH`, () => {
